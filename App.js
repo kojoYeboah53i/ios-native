@@ -2,29 +2,53 @@ import React, {useState} from 'react';
 // import text, stylesheet
 import {View, StyleSheet, FlatList, Alert} from 'react-native';
 import Header from './components/Header';
-// import { uuid } from 'uuidv4';
-import { v4 as uuidv4 } from 'uuid';
+import ListItem from './components/listItem';
+import AddItem from './components/addItem';
 
 const App = () => {
-  // const [items, setItems] = useState([
-  //   {id: uuid(), text: 'Milk'},
-  //   {id: uuid(), text: 'Eggs'},
-  //   {id: uuid(), text: 'Bread'},
-  //   {id: uuid(), text: 'Juice'},
-  //   {id: uuid(), text: 'Fish'},
-  // ]);
+  const [items, setItems] = useState([
+    {id: 1, text: 'Milk'},
+    {id: 2, text: 'Eggs'},
+    {id: 3, text: 'Bread'},
+    {id: 4, text: 'Juice'},
+    {id: 5, text: 'Fish'},
+    {id: 6, text: 'Shellfish'},
+  ]);
   // console.log(uuid());
   // uuidv4();
+  const deleteItem = id => {
+    setItems(prevItems => {
+      return prevItems.filter(item => item.id !== id);
+    });
+  };
+
+  const addItem = item => {
+    if (!item) {
+      Alert.alert('cannot enter empty text');
+    } else {
+      setItems(prevItems => {
+        return [{id: 7, text: item}, ...prevItems];
+      });
+    }
+  };
   return (
     <View style={styles.container}>
-      <Header title="Rovo Auto Services" />
+      <Header title="Shoppping List" />
+      <AddItem addItem={addItem} />
+      <FlatList
+        data={items}
+        renderItem={({item}) => (
+          <ListItem item={item} deleteItem={deleteItem} />
+        )}
+      />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    paddingTop: 50,
+    backgroundColor: '#fff',
   },
 });
 

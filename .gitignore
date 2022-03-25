@@ -60,3 +60,5 @@ buck-out/
 /ios/Pods/
 /vendor/bundle/
 /macbook version
+app.py
+file.py
