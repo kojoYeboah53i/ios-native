@@ -1,7 +1,8 @@
 //useState
 import React, {useState} from 'react';
-import {View, StyleSheet, FlatList, Text} from 'react-native';
+import {View, StyleSheet, FlatList} from 'react-native';
 import Header from './components/header';
+import ListItem from './components/listItem';
 import {uuid} from 'uuidv4';
 
 const App = () => {
@@ -11,12 +12,20 @@ const App = () => {
     {id: uuid(), text: 'Bread'},
     {id: uuid(), text: 'Juice'},
   ]);
+
+  const deleteItem = id => {
+    setItems(prevItems => {
+      return prevItems.filter(item => item.id != id);
+    });
+  };
   return (
     <View style={styles.container}>
       <Header title="Shopping List" />
       <FlatList
         data={items}
-        renderItem={({item}) => <Text>{item.text}</Text>}
+        renderItem={({item}) => (
+          <ListItem item={item} deleteItem={deleteItem} />
+        )}
       />
     </View>
   );
@@ -26,8 +35,6 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: 50,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
 
