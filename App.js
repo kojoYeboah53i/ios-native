@@ -1,8 +1,16 @@
-import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+//useState
+import React, {useState} from 'react';
+import {View, StyleSheet} from 'react-native';
 import Header from './components/header';
+import {uuid} from 'uuidv4';
 
 const App = () => {
+  const [items, setItems] = useState([
+    {id: uuid(), text: 'Milk'},
+    {id: uuid(), text: 'Eggs'},
+    {id: uuid(), text: 'Bread'},
+    {id: uuid(), text: 'Juice'},
+  ]);
   return (
     <View style={styles.container}>
       <Header title="Shopping List" />
