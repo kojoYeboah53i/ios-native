@@ -1,30 +1,21 @@
 import React from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
+import Header from './components/header';
 
 const App = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hello World</Text>
-      <Image source={{uri: 'https://randomuser.me/api/portraits/men/1.jpg'}} style={styles.img} />
+      <Header title="Shopping List" />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    paddingTop: 50,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  text: {
-    fontSize: 30,
-    color: 'darkslateblue',
-  },
-  img: {
-    width: 100,
-    height: 100,
-    borderRadius: 100/2,
   },
 });
 
