@@ -1,5 +1,5 @@
 ## react native application
-<img src="shoppinglist.jpg" >
+<img src="shoppinglist.jpg" height="600">
 
 ## source
  - https://www.youtube.com/watch?v=Hf4MJH0jDb4&t=933s
