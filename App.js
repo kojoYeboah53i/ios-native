@@ -11,6 +11,7 @@ const App = () => {
     {id: uuid(), text: 'Eggs'},
     {id: uuid(), text: 'Bread'},
     {id: uuid(), text: 'Juice'},
+    {id: uuid(), text: 'Fish'},
   ]);
 
   const deleteItem = id => {
