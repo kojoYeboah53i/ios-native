@@ -1,11 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 // import text, stylesheet
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet, FlatList, Alert} from 'react-native';
+import Header from './components/Header';
+// import { uuid } from 'uuidv4';
+import { v4 as uuidv4 } from 'uuid';
 
 const App = () => {
+  // const [items, setItems] = useState([
+  //   {id: uuid(), text: 'Milk'},
+  //   {id: uuid(), text: 'Eggs'},
+  //   {id: uuid(), text: 'Bread'},
+  //   {id: uuid(), text: 'Juice'},
+  //   {id: uuid(), text: 'Fish'},
+  // ]);
+  console.log(uuidv4());
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hello World!</Text>
+      <Header title="Rovo Auto Services" />
     </View>
   );
 };
