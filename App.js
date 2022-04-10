@@ -13,7 +13,8 @@ const App = () => {
   //   {id: uuid(), text: 'Juice'},
   //   {id: uuid(), text: 'Fish'},
   // ]);
-  console.log(uuidv4());
+  // console.log(uuid());
+  // uuidv4();
   return (
     <View style={styles.container}>
       <Header title="Rovo Auto Services" />
