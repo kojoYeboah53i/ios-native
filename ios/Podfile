@@ -21,6 +21,8 @@ target 'AwesomeProject' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
+  pod 'RNPosPrinter', :path => '../node_modules/react-native-pos-printer'
+
   target 'AwesomeProjectTests' do
     inherit! :complete
     # Pods for testing

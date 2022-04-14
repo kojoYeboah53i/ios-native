@@ -3,6 +3,7 @@ package com.awesomeproject;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
+import com.reactlibrary.RNPosPrinterPackage;
 
 public class MainActivity extends ReactActivity {
 

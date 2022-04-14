@@ -4,6 +4,7 @@ import {View, StyleSheet, FlatList, Alert} from 'react-native';
 import Header from './components/Header';
 import ListItem from './components/listItem';
 import AddItem from './components/addItem';
+import PrintingFile from './components/printingFile';
 
 const App = () => {
   const [items, setItems] = useState([
@@ -41,6 +42,7 @@ const App = () => {
           <ListItem item={item} deleteItem={deleteItem} />
         )}
       />
+      <PrintingFile />
     </View>
   );
 };
