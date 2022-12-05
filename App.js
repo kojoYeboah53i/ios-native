@@ -4,16 +4,21 @@ import {View, StyleSheet, FlatList, Alert} from 'react-native';
 import Header from './components/Header';
 import ListItem from './components/listItem';
 import AddItem from './components/addItem';
-import PrintingFile from './components/printingFile';
+// import PrintingFile from './components/printingFile';
+// import NewButton from './components/newModuleButton';
+
+// import ABC from './CustomModule';
 
 const App = () => {
+  // ABC.show();
+
   const [items, setItems] = useState([
-    {id: 1, text: 'Milk'},
-    {id: 2, text: 'Eggs'},
-    {id: 3, text: 'Bread'},
-    {id: 4, text: 'Juice'},
-    {id: 5, text: 'Fish'},
-    {id: 6, text: 'Shellfish'},
+    {id: 120, text: 'Tires'},
+    {id: 2000, text: 'Brakes'},
+    {id: 323, text: 'Alignment'},
+    {id: 448, text: 'Balancing'},
+    {id: 105, text: 'Oil Change'},
+    {id: 603, text: 'Car diagnostics'},
   ]);
   // console.log(uuid());
   // uuidv4();
@@ -34,7 +39,7 @@ const App = () => {
   };
   return (
     <View style={styles.container}>
-      <Header title="Shoppping List" />
+      <Header title="Rovo Auto Center" />
       <AddItem addItem={addItem} />
       <FlatList
         data={items}
@@ -42,7 +47,6 @@ const App = () => {
           <ListItem item={item} deleteItem={deleteItem} />
         )}
       />
-      <PrintingFile />
     </View>
   );
 };
