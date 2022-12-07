@@ -1,22 +1,30 @@
 import React, {useState} from 'react';
+// import text, stylesheet
 import {View, StyleSheet, FlatList, Alert} from 'react-native';
-import Header from './components/header';
+import Header from './components/Header';
 import ListItem from './components/listItem';
 import AddItem from './components/addItem';
-import {uuid} from 'uuidv4';
+// import PrintingFile from './components/printingFile';
+// import NewButton from './components/newModuleButton';
+
+// import ABC from './CustomModule';
 
 const App = () => {
-  const [items, setItems] = useState([
-    {id: uuid(), text: 'Milk'},
-    {id: uuid(), text: 'Eggs'},
-    {id: uuid(), text: 'Bread'},
-    {id: uuid(), text: 'Juice'},
-    {id: uuid(), text: 'Fish'},
-  ]);
+  // ABC.show();
 
+  const [items, setItems] = useState([
+    {id: 120, text: 'Tires'},
+    {id: 2000, text: 'Brakes'},
+    {id: 323, text: 'Alignment'},
+    {id: 448, text: 'Balancing'},
+    {id: 105, text: 'Oil Change'},
+    {id: 603, text: 'Car diagnostics'},
+  ]);
+  // console.log(uuid());
+  // uuidv4();
   const deleteItem = id => {
     setItems(prevItems => {
-      return prevItems.filter(item => item.id != id);
+      return prevItems.filter(item => item.id !== id);
     });
   };
 
@@ -25,13 +33,13 @@ const App = () => {
       Alert.alert('cannot enter empty text');
     } else {
       setItems(prevItems => {
-        return [{id: uuid(), text: item}, ...prevItems];
+        return [{id: 7, text: item}, ...prevItems];
       });
     }
   };
   return (
     <View style={styles.container}>
-      <Header title="Shopping List" />
+      <Header title="Rovo Auto Center" />
       <AddItem addItem={addItem} />
       <FlatList
         data={items}
